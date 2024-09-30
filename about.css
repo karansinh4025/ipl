@@ -1,0 +1,121 @@
+/* Global styles */
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+body {
+   color: #333;
+   font: italic small-caps bold 12px/30px Georgia, serif;
+   transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+:root {
+   --background-color: #f4f4f4;
+   --text-color: white;
+   --navbar-background: #333;
+   --navbar-text: #fff;
+   --service-background: #fff;
+   --service-border: none;
+   --service-shadow: rgba(0, 0, 0, 0.1);
+}
+
+/* About Section */
+.about-section {
+   background-image: url('/bg_image /music-notes.jpg');
+   background-attachment: fixed;
+   background-repeat: no-repeat;
+   background-size: cover;
+   color: floralwhite;
+   padding: 50px 20px;
+   text-align: center;
+}
+
+.services {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 20px;
+   justify-content: center;
+}
+
+.service {
+   border: 1px solid var(--service-border);
+   border-radius: 8px;
+   padding: 20px;
+   margin-bottom: -1em;
+   width: auto;
+   box-shadow: 0 4px 8px var(--service-shadow);
+}
+
+.glass {
+   background: rgba(255, 255, 255, 0.2);
+   box-shadow: 0px 0px 5px 1px white;
+   border-radius: 10px;
+   backdrop-filter: blur(17px);
+   margin-bottom: 20px;
+}
+
+
+.service h2 {
+   font-size: 40px;
+   margin-bottom: 10px;
+   padding: 10px;
+}
+
+hr {
+   width: auto;
+   height: 4px;
+   background-color: white;
+   margin-bottom: 10px;
+}
+
+.service p {
+   font-size: 20px;
+   line-height: 1.6;
+}
+
+.ul {
+   font-size: 20px;
+}
+
+.heading h2 {
+   font-size: 4.4em;
+   margin: 0;
+   height: auto;
+   width: auto;
+   padding: 10px 0;
+   color: white;
+   text-shadow: 0px 0px 5px white, 0px 0px 0px white, 0px 5px 7px black;
+   padding-bottom: 15px;
+   animation: blinker 1.4s linear infinite;
+}
+
+@keyframes blinker {
+   50% {
+      opacity: 0;
+   }
+}
+
+.about {
+   text-indent: -2.3em;
+}
+
+.share {
+   text-indent: -1em;
+}
+
+.songs {
+   text-indent: 2em;
+}
+
+h1 {
+   font-size: 55px;
+   margin-bottom: 20px;
+}
+
+p {
+   font-size: 18px;
+   margin-bottom: 30px;
+   line-height: 1.6;
+}

@@ -1,0 +1,130 @@
+.main_section {
+   margin-top: 5pc;
+}
+
+/* Navbar */
+.navbar {
+   position: fixed;
+   top: 0;
+   width: 100%;
+   background: rgba(255, 255, 255, 0.1);
+   /* Transparent background */
+   backdrop-filter: blur(10px);
+   /* Glass effect */
+   color: #fff;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 20px 30px;
+   z-index: 1000;
+   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .logo {
+   font-size: 24px;
+   font-weight: bold;
+}
+
+.nav-links {
+   list-style: none;
+   margin: 0;
+   padding: 0;
+   display: flex;
+   align-items: center;
+   gap: 15px;
+}
+
+.nav-links input[type="checkbox"] {
+   display: none;
+}
+
+.nav-links .menu {
+   display: flex;
+   gap: 15px;
+   font-size: 17px;
+   transition: all 0.5s ease-in-out;
+}
+
+.nav-links li {
+   list-style: none;
+}
+
+.nav-links li a {
+   color: #fff;
+   text-decoration: none;
+   padding: 100px 20px;
+   border: 2px solid transparent;
+   transition: background-color 0.3s ease, border-color 0.3s ease;
+   border-radius: 5px;
+}
+
+.nav-links li a:hover {
+   background-color: rgba(255, 255, 255, 0.2);
+   border-color: #fff;
+}
+
+.hamburger {
+   display: none;
+   font-size: 30px;
+   color: #fff;
+   cursor: pointer;
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+   .nav-links .menu {
+      position: fixed;
+      top: 60px;
+      left: 0;
+      border: 2px solid white;
+      width: 100%;
+      height: 17pc;
+      background-color: rgba(51, 51, 51, 0.8);
+      /*
+      
+   background-attachment: fixed;
+   background-repeat: no-repeat;
+   background-size: cover; */
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 35px;
+      display: none;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+      transform: translateY(-100%);
+   }
+
+   .nav-links input:checked~.menu {
+      display: flex;
+      opacity: 1;
+      transform: translateY(0);
+   }
+
+   .hamburger {
+      display: block;
+   }
+
+   .navbar {
+      padding: 20px 25px;
+   }
+
+   .menu li a {
+      padding: 15px 5em 15px 5em;
+      border: 2px solid white;
+      background-color: rgba(255, 255, 255, 0.2);
+      border-radius: 5px;
+   }
+
+   .menu li a {
+      padding: 15px 5em 15px 5em;
+      border: 2px solid white;
+      background-color: rgba(255, 255, 255, 0.2);
+      border-radius: 5px;
+   }
+
+   .menu li a:hover {
+      background-color: rgba(255, 255, 255, 0.4);
+      /* Darker background on hover */
+   }
+}

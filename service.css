@@ -1,0 +1,98 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+body {
+   background-color: var(--background-color);
+   color: var(--text-color);
+   font: italic small-caps bold 12px/30px Georgia, serif;
+   line-height: 1.6;
+}
+
+/* Light Mode Variables */
+:root {
+   --background-color: #f4f4f4;
+   --text-color: white;
+   --navbar-background: #333;
+   --navbar-text: #fff;
+   --service-background: #fff;
+   --service-border: none;
+   --service-shadow: rgba(0, 0, 0, 0.1);
+}
+
+/* Services Section */
+.services-section {
+   background-image: url('/bg_image /music-notes.jpg');
+   background-attachment: fixed;
+   background-repeat: no-repeat;
+   background-size: cover;
+   padding: 50px 20px;
+}
+
+.glass {
+   background: rgba(255, 255, 255, 0.2);
+   box-shadow: 0px 0px 5px 1px white;
+   border-radius: 10px;
+   backdrop-filter: blur(17px);
+   margin-bottom: 20px;
+}
+
+.container {
+   max-width: 1200px;
+   margin: 0 auto;
+}
+
+/* Heading Styles */
+.heading {
+   text-align: center;
+   padding: 1em 0;
+   color: white;
+   text-shadow: 0px 0px 5px white, 0px 5px 7px black;
+}
+
+.services {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 20px;
+   justify-content: center;
+}
+
+.service {
+   border: 1px solid var(--service-border);
+   border-radius: 8px;
+   padding: 20px;
+   box-shadow: 0 4px 8px var(--service-shadow);
+   width: 300px;
+   /* Fixed width for uniformity */
+}
+
+.service h2 {
+   font-size: 20px;
+   margin-bottom: 10px;
+}
+
+hr {
+   height: 4px;
+   background-color: white;
+   margin: 10px 0;
+}
+
+.service p {
+   font-size: 16px;
+   line-height: 1.6;
+}
+
+/* Media Queries for smaller screens */
+@media (max-width: 768px) {
+   .service {
+      width: 100%;
+      /* Full width on smaller screens */
+   }
+
+   .service p {
+      font-size: 18px;
+      /* Increase text size for better readability */
+   }
+}

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Contact Us - Share Song</title>
+   <link rel="stylesheet" href="/contact page /contact.css">
+</head>
+
+<body>
+   <div class="contact-container">
+      <h1>Contact Us</h1>
+      <form action="submit_form.php" method="post" class="contact-form">
+         <input type="text" name="name" placeholder="Name *" required>
+         <input type="email" name="email" placeholder="Email *" required>
+         <input type="tel" name="phone" placeholder="Phone *" required>
+         <select name="state" required>
+            <option value="" disabled selected>Select State *</option>
+            <option value="Andhra Pradesh">Andhra Pradesh</option>
+            <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+            <option value="Assam">Assam</option>
+            <option value="Bihar">Bihar</option>
+            <option value="Chhattisgarh">Chhattisgarh</option>
+            <option value="Goa">Goa</option>
+            <option value="Gujarat">Gujarat</option>
+            <option value="Haryana">Haryana</option>
+            <option value="Himachal Pradesh">Himachal Pradesh</option>
+            <option value="Jharkhand">Jharkhand</option>
+            <option value="Karnataka">Karnataka</option>
+            <option value="Kerala">Kerala</option>
+            <option value="Madhya Pradesh">Madhya Pradesh</option>
+            <option value="Maharashtra">Maharashtra</option>
+            <option value="Manipur">Manipur</option>
+            <option value="Meghalaya">Meghalaya</option>
+            <option value="Mizoram">Mizoram</option>
+            <option value="Nagaland">Nagaland</option>
+            <option value="Odisha">Odisha</option>
+            <option value="Punjab">Punjab</option>
+            <option value="Rajasthan">Rajasthan</option>
+            <option value="Sikkim">Sikkim</option>
+            <option value="Tamil Nadu">Tamil Nadu</option>
+            <option value="Telangana">Telangana</option>
+            <option value="Tripura">Tripura</option>
+            <option value="Uttar Pradesh">Uttar Pradesh</option>
+            <option value="Uttarakhand">Uttarakhand</option>
+            <option value="West Bengal">West Bengal</option>
+            <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+            <option value="Chandigarh">Chandigarh</option>
+            <option value="Dadra and Nagar Haveli and Daman and Diu">Dadra and Nagar Haveli and Daman and Diu</option>
+            <option value="Lakshadweep">Lakshadweep</option>
+            <option value="Delhi">Delhi</option>
+            <option value="Puducherry">Puducherry</option>
+            <option value="Ladakh">Ladakh</option>
+            <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+         </select>
+         <input type="text" name="pin" placeholder="Pin Code *" required>
+         <textarea name="query" placeholder="Your Query *" rows="4" required></textarea>
+
+         <!-- CAPTCHA Section -->
+         <div class="captcha-section">
+            <img id="captchaImage" class="captcha-image" src="" alt="CAPTCHA">
+            <input type="text" id="captchaInput" placeholder="Enter CAPTCHA *" required>
+            <div class="captcha-buttons">
+               <button type="button" onclick="generateCaptcha()">Refresh CAPTCHA</button>
+               <button type="button" id="checkCaptchaBtn" onclick="checkCaptcha()">Check CAPTCHA</button>
+            </div>
+            <p id="captchaResult" class="captcha-result"></p>
+         </div>
+
+         <button type="submit" id="submitBtn" disabled>Get Your Quote</button>
+      </form>
+   </div>
+   <script>
+      // JavaScript for generating CAPTCHA
+      let captchaText = '';
+
+      // Function to generate random CAPTCHA
+      function generateCaptcha() {
+         const charsArray = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+         const length = 6; // Length of the CAPTCHA
+         captchaText = '';
+         for (let i = 0; i < length; i++) {
+            const randomIndex = Math.floor(Math.random() * charsArray.length);
+            captchaText += charsArray[randomIndex];
+         }
+         document.getElementById('captchaImage').src = `https://dummyimage.com/200x60/000/fff&text=${captchaText}`;
+         document.getElementById('captchaInput').value = ''; // Clear input when CAPTCHA is refreshed
+         document.getElementById('captchaResult').style.display = 'none'; // Hide the result on refresh
+         document.getElementById('submitBtn').disabled = true; // Disable submit button on refresh
+      }
+
+      // Function to check CAPTCHA input
+      function checkCaptcha() {
+         const userCaptchaInput = document.getElementById('captchaInput').value;
+         const captchaResult = document.getElementById('captchaResult');
+         if (userCaptchaInput === captchaText) {
+            captchaResult.style.display = 'block';
+            captchaResult.style.color = 'green';
+            captchaResult.innerText = 'CAPTCHA verified successfully!';
+            document.getElementById('submitBtn').disabled = false; // Enable submit button if correct
+         } else {
+            captchaResult.style.display = 'block';
+            captchaResult.style.color = 'red';
+            captchaResult.innerText = 'Incorrect CAPTCHA. Please try again.';
+            document.getElementById('submitBtn').disabled = true; // Keep submit button disabled
+         }
+      }
+
+      // Generate CAPTCHA when the page loads
+      window.onload = generateCaptcha;
+   </script>
+
+</body>
+
+</html>

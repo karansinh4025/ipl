@@ -1,0 +1,186 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+   font: italic small-caps bold 12px/30px Georgia, serif;
+   background-color: #f9f9f9;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100vh;
+   padding: 20px;
+}
+
+/* Contact Container */
+.contact-container {
+   background-color: #ffffff;
+   padding: 20px;
+   border-radius: 8px;
+   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+   width: 100%;
+   max-width: 600px;
+   /* Increased max width for larger screens */
+   margin: 0 auto;
+   /* Center the container */
+}
+
+/* Header */
+h1 {
+   text-align: center;
+   margin-bottom: 20px;
+   font-size: 26px;
+   /* Increased font size for better visibility */
+}
+
+/* Form Styles */
+.contact-form {
+   display: flex;
+   flex-direction: column;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+   margin-bottom: 15px;
+   padding: 12px;
+   /* Increased padding for better touch target */
+   font-size: 16px;
+   border: 1px solid #ccc;
+   border-radius: 4px;
+   width: 100%;
+}
+
+.contact-form select {
+   background-color: #fff;
+}
+
+.contact-form textarea {
+   resize: vertical;
+}
+
+/* Button Styles */
+.contact-form button {
+   background-color: #000;
+   color: #fff;
+   padding: 12px;
+   /* Increased padding for better touch target */
+   font-size: 16px;
+   border: none;
+   border-radius: 4px;
+   cursor: pointer;
+   transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+   background-color: #333;
+}
+
+/* CAPTCHA Section */
+.captcha-section {
+   margin-bottom: 15px;
+}
+
+.captcha-section img {
+   display: block;
+   margin-bottom: 10px;
+   max-width: 100%;
+   /* Make sure CAPTCHA image is responsive */
+}
+
+/* Aligning buttons in single row */
+.captcha-buttons {
+   display: flex;
+   justify-content: space-between;
+}
+
+.captcha-buttons button {
+   width: 48%;
+}
+
+.captcha-result {
+   display: none;
+   margin-top: 10px;
+   color: red;
+   /* Error message color */
+}
+
+.captcha {
+   display: flex;
+   align-items: center;
+   margin-bottom: 15px;
+}
+
+.captcha input {
+   margin-right: 10px;
+}
+
+.recaptcha a {
+   font-size: 12px;
+   color: #666;
+   text-decoration: none;
+}
+
+.recaptcha a:hover {
+   text-decoration: underline;
+}
+
+/* Responsive Styles for Tablets */
+@media (max-width: 768px) {
+   body {
+      font: italic small-caps bold 14px/32px Georgia, serif;
+      padding: 10px;
+   }
+
+   .contact-container {
+      max-width: 90%;
+      padding: 15px;
+   }
+
+   h1 {
+      font-size: 24px;
+   }
+
+   .contact-form input,
+   .contact-form select,
+   .contact-form textarea {
+      font-size: 14px;
+      padding: 10px;
+   }
+
+   .contact-form button {
+      font-size: 14px;
+      padding: 10px;
+   }
+}
+
+/* Responsive Styles for Mobile Phones */
+@media (max-width: 480px) {
+   body {
+      font: italic small-caps bold 12px/28px Georgia, serif;
+   }
+
+   .contact-container {
+      max-width: 100%;
+      padding: 10px;
+   }
+
+   h1 {
+      font-size: 20px;
+   }
+
+   .contact-form input,
+   .contact-form select,
+   .contact-form textarea {
+      font-size: 12px;
+      padding: 8px;
+   }
+
+   .contact-form button {
+      font-size: 12px;
+      padding: 8px;
+   }
+}

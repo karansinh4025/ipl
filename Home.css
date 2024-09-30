@@ -1,0 +1,80 @@
+/* Global styles */
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+body {
+   color: white;
+   font: italic small-caps bold 12px/30px Georgia, serif;
+   background-image: url('/bg_image /music-notes.jpg');
+   background-attachment: fixed;
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+
+/* Home Section */
+.home-section {
+   padding: 30px 20px;
+   text-align: center;
+}
+
+.heading {
+   padding: 5px;
+   font-size: 55px;
+   text-shadow: 0px 0px 5px white,
+      0px 0px 0px white,
+      0px 5px 7px black;
+   animation: blinker 1.4s linear infinite;
+}
+
+@keyframes blinker {
+   50% {
+      opacity: 0;
+   }
+}
+
+.glass {
+   background: rgba(255, 255, 255, 0.2);
+   box-shadow: 0px 0px 5px 1px white;
+   border-radius: 10px;
+   backdrop-filter: blur(17px);
+   margin-bottom: 20px;
+   width: 100%;
+   height: auto;
+   padding: 4em 0;
+}
+
+.container {
+   max-width: 1200px;
+   margin: 0 auto;
+   padding: 0 20px;
+   /* Added padding for smaller screens */
+}
+
+h1 {
+   font-size: 48px;
+   margin-bottom: 25px;
+}
+
+/* Paragraph styles */
+.paragraph {
+   font-size: 18px;
+   margin-top: 15px;
+   margin-bottom: 30px;
+}
+
+.btn {
+   background: #007bff;
+   color: #fff;
+   padding: 10px 20px;
+   text-decoration: none;
+   border-radius: 5px;
+   font-size: 16px;
+   transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+   background-color: #0056b3;
+}
